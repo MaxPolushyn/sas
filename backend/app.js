@@ -11,16 +11,13 @@ app.use('/api/tests', testRoutes);
 const cors = require('cors');
 app.use(cors());
 
-// Middleware for parsing JSON
 app.use(bodyParser.json());
 app.use(express.json());
 
-// Serve static files
 const frontendPath = path.join(__dirname, '../frontend');
 app.use(express.static(frontendPath));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Use routes
 console.log('Registering routes...');
 app.use('/api/auth', authRoutes);
 const backendPath = path.join(__dirname, '../backend');
@@ -30,7 +27,6 @@ app.use(express.static(frontendPath));
 app.use('/api/disciplines', disciplineRoutes);
 app.use('/api/results', resultRoutes);
 app.use('/pages', express.static(path.join(frontendPath, 'pages')));
-// Default route to serve register.html
 app.get('/', (req, res) => {
     res.sendFile(path.join(frontendPath, 'pages/register.html'));
 });
