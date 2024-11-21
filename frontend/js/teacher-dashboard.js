@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const addDisciplineForm = document.getElementById('add-discipline-form');
     const disciplineNameInput = document.getElementById('discipline-name');
    
-
+  addDisciplineLink.addEventListener('click', () => {
+        
+        hideAllSections();
+        addDisciplineSection.style.display = 'block';
+    });
     const hideAllSections = () => {
         addDisciplineSection.style.display = 'none';
         createTestSection.style.display = 'none';
