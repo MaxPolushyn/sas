@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="../css/teacher-dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="EDUCHECK Logo">
+        </div>
+        <div class="menu">
+            <a href="#" id="home-link"> Home</a>
+            <a href="#" id="manage-tests-link"> Manage Tests</a>
+            <a href="#" id="view-results-link">View Results</a>
+            <a href="#" id="create-test-link"> Create Test</a> 
+            <a href="#" id="add-discipline-link"> Add Discipline</a>
+            <a href="#" id="profile-link"><img src="../assets/profile-icon.png" alt="Profile"> Profile</a>
+            <a href="/logout"><img src="../assets/logout-icon.png" alt="Logout"> Log Out</a>
+        </div>
+    </div>
+    <div id="manage-tests-section" style="display: none;">
+        <h3>Manage Tests</h3>
+        <div id="test-list">
+        </div>
+    </div>
+    <div class="main-content">
+        <div id="home-section">
+            <h2>Welcome to Your Teacher Dashboard</h2>
+            <p>Manage your tests, view results, and more!</p>
+        </div>
+
+        <div id="manage-tests-section" style="display: none;">
+            <h3>Create a New Test</h3>
+            <form id="add-test-form" enctype="multipart/form-data">
+                <label for="test-name">Test Name:</label>
+                <input type="text" id="test-name" placeholder="Enter test name" required>
+
+                <label for="discipline-select">Select Discipline:</label>
+                <select id="discipline-select" required>
+                    <option value="">Select Discipline</option>
+                </select>
+
+                <label for="test-file">Upload Test File (CSV/JSON):</label>
+                <input type="file" id="test-file" accept=".csv, .json" required>
+
+                <button type="submit">Create Test</button>
+            </form>
+        </div>
+
+<div id="create-test-section" style="display: none;">
+    <h3>Create a New Test</h3>
+    <form id="create-test-form">
+        <label for="new-test-name">Test Name:</label>
+    <input type="text" id="new-test-name" placeholder="Enter test name" required>
+        <label for="discipline-select">Select Discipline:</label>
+        <select id="create-discipline-select" required>
+            <option value="">Select Discipline</option>
+        </select>
+        <div id="questions-container">
+            <div class="question-group">
+                <label for="question-1">Question 1:</label>
+                <textarea id="question-1" placeholder="Enter question text" required></textarea>
+
+                <label>Answers:</label>
+                <div class="answers-container">
+                    <div class="answer-group">
+                        <textarea id="answer-1-1" placeholder="Enter answer" required></textarea>
+                        <input type="radio" name="correct-answer-1" id="correct-1-1" class="correct-answer">
+                        <label for="correct-1-1">Correct</label>
+                    </div>
+                    <div class="answer-group">
+                        <textarea id="answer-1-2" placeholder="Enter answer" required></textarea>
+                        <input type="radio" name="correct-answer-1" id="correct-1-2" class="correct-answer">
+                        <label for="correct-1-2">Correct</label>
+                    </div>
+                </div>
+
+                <button type="button" class="add-answer-button" onclick="addAnswer(1)">Add Another Answer</button>
+                <button type="button" class="delete-question-button" onclick="deleteQuestion(1)">Delete Question</button>
+            </div>
+        </div>
+
+        <button type="button" id="add-question-button">Add Another Question</button>
+        <button type="submit" id="submit-test-button">Create Test</button>
+    </form>
+
+    <div id="download-section" style="display: none;">
+        <button id="download-json">Download Test as JSON</button>
+    </div>
+</div>
+<div id="add-discipline-section" style="display: none;">
+    <h3>Add New Discipline</h3>
+    <form id="add-discipline-form">
+        <label for="discipline-name">Discipline Name:</label>
+        <input type="text" id="discipline-name" placeholder="Enter discipline name" required>
+        <button type="submit">Add Discipline</button>
+    </form>
+</div>
+
+
+        <div id="view-results-section" style="display: none;">
+            <h3>View Test Results</h3>
+            <form id="view-results-form">
+                <label for="select-discipline">Select Discipline:</label>
+                <select id="select-discipline" required>
+                    <option value="">Select Discipline</option>
+                </select>
+
+                <label for="select-test">Select Test:</label>
+                <select id="select-test" required>
+                    <option value="">Select Test</option>
+                </select>
+
+                <button type="submit">View Results</button>
+            </form>
+
+            <div id="results-display">
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/teacher-dashboard.js"></script>
+</body>
+</html>

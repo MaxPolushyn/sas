@@ -1,0 +1,49 @@
+{
+    "name": "Sample Test",
+    "discipline": "Math",
+    "questions": [
+      {
+        "questionId": 1,
+        "question": "What is 2 + 2?",
+        "answers": [
+          {
+            "answerId": 1,
+            "text": "3",
+            "isCorrect": false
+          },
+          {
+            "answerId": 2,
+            "text": "4",
+            "isCorrect": true
+          },
+          {
+            "answerId": 3,
+            "text": "5",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "questionId": 2,
+        "question": "What is the capital of France?",
+        "answers": [
+          {
+            "answerId": 1,
+            "text": "Paris",
+            "isCorrect": true
+          },
+          {
+            "answerId": 2,
+            "text": "London",
+            "isCorrect": false
+          },
+          {
+            "answerId": 3,
+            "text": "Rome",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+  

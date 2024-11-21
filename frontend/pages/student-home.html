@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home</title>
+    <link rel="stylesheet" href="../css/student-home.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="EDUCHECK Logo">
+        </div>
+        <div class="menu">
+            <a href="#" id="home-link"> Home</a>
+            <a href="#" id="view-tests-link"> View Tests</a>
+            <a href="#" id="view-results-link">View My Results</a>
+            <a href="/logout"><img src="../assets/logout-icon.png" alt="Logout"> Log Out</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="home-section">
+            <h2>Welcome, Student</h2>
+            <p>View available tests and take them to evaluate your skills.</p>
+        </div>
+        <div id="results-section" style="display: none;">
+            <h3>My Test Results</h3>
+            <div id="user-results-container">
+            </div>
+        </div>
+        <div id="view-tests-section" style="display: none;">
+            <h3>Available Tests</h3>
+            <form id="view-tests-form">
+                <label for="select-discipline">Select Discipline:</label>
+                <select id="select-discipline" required>
+                    <option value="">Select Discipline</option>
+                </select>
+
+                <label for="select-test">Select Test:</label>
+                <select id="select-test" required>
+                    <option value="">Select Test</option>
+                </select>
+
+                <button type="submit">Take Test</button>
+            </form>
+
+            <div id="test-questions-container" style="display: none;">
+                <h3>Test Questions</h3>
+                <form id="test-questions-form"></form>
+                <button id="submit-test-button" style="display: none;">Submit Test</button>
+            </div>
+            <div id="test-results-container" style="display: none;">
+                <h3>Test Results</h3>
+    <p id="test-score"></p>
+    <p id="test-grade"></p>
+            </div>
+            
+             
+        </div>
+    </div>
+
+    <script src="../js/student-home.js"></script>
+</body>
+</html>
